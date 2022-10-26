@@ -9,7 +9,7 @@ function App() {
       return
     }
 
-    window.StockTicker.addListener((tick) => {
+    window.StockTicker.addListener((tick: any) => {
       console.log('Stock tick:', tick);
     });
   }, [])
