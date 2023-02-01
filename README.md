@@ -18,14 +18,4 @@ This project has a single App Component which subscribes to a `stockTicker$` Obs
 
 ## Assignment
 
-Your objective is to flesh out a Single Page App that displays these stock prices.
-
-- Simple solution: Show all `Tick` events in an expanding list
-- Medium solution: Create dynamic list of stock ticker symbols and end prices that updates automatically in place.
-- Robust solution:
-  - Create a table with a row for each stock symbol and columns for price information (start, end, change).
-  - The table should update automatically in place.
-  - Add CSS and/or animations to change colors for positive and negative values.
-- Bonus points:
-  - Mobile layout support by using percentage of screen width for table columns
-  - Make stock ticker symbols clickable and have it open to show price history under most recent price
+Your objective is to flesh out a Single Page App that displays the stock prices. You will received additional instructions during the interview.
