@@ -1,4 +1,4 @@
-export default function StockDetail(props: {title: any, detail: number}) {
+export default function StockDetail(props: {title: string, detail: number}) {
   const isInit = props.detail === 0;
   const isChange = props.title === "Change";
   let detail = props.detail.toString()
