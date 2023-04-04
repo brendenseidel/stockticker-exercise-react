@@ -1,18 +1,33 @@
 import './App.css';
-import { stockTicker$ } from './stockTicker.service';
+import { symbols, stockTicker$ } from './stockTicker.service';
 import { Tick } from './types/tick';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import StockShow from './components/StockShow';
 
 function App() {
+  const [latestTick, setLatestTick] = useState<Tick>({
+    symbol: '',
+    start: 0,
+    change: 0,
+    end: 0
+  })
+
+
   useEffect(() => {
     stockTicker$.subscribe((tick: Tick) => {
-      console.log('Stock tick:', tick);
+      handleTick(tick)
     })
   }, [])
 
+  const handleTick = (tick: Tick) => {
+    setLatestTick(tick);
+  }
+
   return (
-    <div className="App">
-      <h1>Stock Ticker</h1>
+    <div className="App flex">
+      {symbols.map(symbol => 
+        <StockShow key={symbol} symbol={symbol} tick={latestTick as Tick}/>
+      )}
     </div>
   );
 }

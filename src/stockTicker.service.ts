@@ -4,7 +4,7 @@ import { Tick } from './types/tick';
 
 const minDelay = 1000;
 const maxDelayDelta = 3000;
-const symbols = ['S&P 500', 'DOW J', 'NASDAQ'];
+export const symbols = ['S&P 500', 'DOW J', 'NASDAQ'];
 const deltas = [-120, -85, -15, 25, 55, 105, 180];
 const symbolToLastPrice = new Map<string, number>();
 symbolToLastPrice.set(symbols[0], 4000);
