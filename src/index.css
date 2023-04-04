@@ -9,20 +9,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #08100D;
+  margin-right: 4rem;
+  margin-left: 4rem;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.App {
-  /* display: flex; */
-}
-
-.ticker {
-  border: 1px solid #333;
-  border-radius: 5px;
-  margin: 1em;
-  padding: 1em;
 }

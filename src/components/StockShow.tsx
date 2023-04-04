@@ -1,5 +1,6 @@
 import { Tick } from "../types/tick";
 import { useState, useEffect } from "react";
+import StockDetail from "./StockDetail";
 
 export default function StockShow(props: {symbol: string, tick: Tick}) {
   const [stock, setStock] =  useState<Tick>({
@@ -14,15 +15,15 @@ export default function StockShow(props: {symbol: string, tick: Tick}) {
       setStock(props.tick)
     }
   }, [props.symbol, props.tick])
-
-
   
   return (
-    <div>
-      <h1>{props.symbol}</h1>
-      <p>Start: {stock.start ? stock.start : '--'}</p>
-      <p>Change: {stock.change ? stock.change : '--'}</p>
-      <p>End: {stock.end ? stock.end : '--'}</p>
+    <div className="bg-slate-100 basis-60 rounded-xl overflow-hidden">
+      <h2 className="font-bold text-2xl text-center pt-2 pb-2 bg-slate-300">{props.symbol}</h2>
+      <div className="flex flex-col space-y-1 p-4">
+        <StockDetail title="Start" detail={stock.start}/>
+        <StockDetail title="Change" detail={stock.change}/>
+        <StockDetail title="End" detail={stock.end}/>
+      </div>
     </div>
   );
 }

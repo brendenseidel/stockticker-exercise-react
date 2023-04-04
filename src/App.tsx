@@ -15,6 +15,7 @@ function App() {
 
   useEffect(() => {
     stockTicker$.subscribe((tick: Tick) => {
+      console.log(tick)
       handleTick(tick)
     })
   }, [])
@@ -24,11 +25,15 @@ function App() {
   }
 
   return (
-    <div className="App flex">
-      {symbols.map(symbol => 
-        <StockShow key={symbol} symbol={symbol} tick={latestTick as Tick}/>
-      )}
-    </div>
+    <>
+    <h1 className='text-white text-4xl text-center mt-8 mb-8 font-bold'>Stock Ticker</h1>
+
+      <div className="flex flex-wrap justify-center gap-x-4 gap-y-8">
+        {symbols.map(symbol => 
+          <StockShow key={symbol} symbol={symbol} tick={latestTick as Tick}/>
+        )}
+      </div>
+    </>
   );
 }
 
